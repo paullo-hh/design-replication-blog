@@ -10,6 +10,13 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AvisoDeAfiliadosRouteImport } from './routes/aviso-de-afiliados'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as PrivacidadeRouteImport } from './routes/privacidade'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as TermosRouteImport } from './routes/termos'
 import { Route as ArtigosIndexRouteImport } from './routes/artigos.index'
 import { Route as ArtigosSlugRouteImport } from './routes/artigos.$slug'
 import { Route as CategoriasSlugRouteImport } from './routes/categorias.$slug'
@@ -18,6 +25,41 @@ import { Route as ProdutosSlugRouteImport } from './routes/produtos.$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AvisoDeAfiliadosRoute = AvisoDeAfiliadosRouteImport.update({
+  id: '/aviso-de-afiliados',
+  path: '/aviso-de-afiliados',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacidadeRoute = PrivacidadeRouteImport.update({
+  id: '/privacidade',
+  path: '/privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermosRoute = TermosRouteImport.update({
+  id: '/termos',
+  path: '/termos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ArtigosIndexRoute = ArtigosIndexRouteImport.update({
@@ -43,6 +85,13 @@ const ProdutosSlugRoute = ProdutosSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/aviso-de-afiliados': typeof AvisoDeAfiliadosRoute
+  '/contato': typeof ContatoRoute
+  '/cookies': typeof CookiesRoute
+  '/privacidade': typeof PrivacidadeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sobre': typeof SobreRoute
+  '/termos': typeof TermosRoute
   '/artigos/$slug': typeof ArtigosSlugRoute
   '/categorias/$slug': typeof CategoriasSlugRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
@@ -50,6 +99,13 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/aviso-de-afiliados': typeof AvisoDeAfiliadosRoute
+  '/contato': typeof ContatoRoute
+  '/cookies': typeof CookiesRoute
+  '/privacidade': typeof PrivacidadeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sobre': typeof SobreRoute
+  '/termos': typeof TermosRoute
   '/artigos/$slug': typeof ArtigosSlugRoute
   '/categorias/$slug': typeof CategoriasSlugRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
@@ -58,6 +114,13 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/aviso-de-afiliados': typeof AvisoDeAfiliadosRoute
+  '/contato': typeof ContatoRoute
+  '/cookies': typeof CookiesRoute
+  '/privacidade': typeof PrivacidadeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sobre': typeof SobreRoute
+  '/termos': typeof TermosRoute
   '/artigos/$slug': typeof ArtigosSlugRoute
   '/categorias/$slug': typeof CategoriasSlugRoute
   '/produtos/$slug': typeof ProdutosSlugRoute
@@ -67,6 +130,13 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/aviso-de-afiliados'
+    | '/contato'
+    | '/cookies'
+    | '/privacidade'
+    | '/sitemap.xml'
+    | '/sobre'
+    | '/termos'
     | '/artigos/$slug'
     | '/categorias/$slug'
     | '/produtos/$slug'
@@ -74,6 +144,13 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/aviso-de-afiliados'
+    | '/contato'
+    | '/cookies'
+    | '/privacidade'
+    | '/sitemap.xml'
+    | '/sobre'
+    | '/termos'
     | '/artigos/$slug'
     | '/categorias/$slug'
     | '/produtos/$slug'
@@ -81,6 +158,13 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/aviso-de-afiliados'
+    | '/contato'
+    | '/cookies'
+    | '/privacidade'
+    | '/sitemap.xml'
+    | '/sobre'
+    | '/termos'
     | '/artigos/$slug'
     | '/categorias/$slug'
     | '/produtos/$slug'
@@ -89,6 +173,13 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AvisoDeAfiliadosRoute: typeof AvisoDeAfiliadosRoute
+  ContatoRoute: typeof ContatoRoute
+  CookiesRoute: typeof CookiesRoute
+  PrivacidadeRoute: typeof PrivacidadeRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SobreRoute: typeof SobreRoute
+  TermosRoute: typeof TermosRoute
   ArtigosSlugRoute: typeof ArtigosSlugRoute
   CategoriasSlugRoute: typeof CategoriasSlugRoute
   ProdutosSlugRoute: typeof ProdutosSlugRoute
@@ -102,6 +193,55 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/aviso-de-afiliados': {
+      id: '/aviso-de-afiliados'
+      path: '/aviso-de-afiliados'
+      fullPath: '/aviso-de-afiliados'
+      preLoaderRoute: typeof AvisoDeAfiliadosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacidade': {
+      id: '/privacidade'
+      path: '/privacidade'
+      fullPath: '/privacidade'
+      preLoaderRoute: typeof PrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/termos': {
+      id: '/termos'
+      path: '/termos'
+      fullPath: '/termos'
+      preLoaderRoute: typeof TermosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/artigos/': {
@@ -137,6 +277,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AvisoDeAfiliadosRoute: AvisoDeAfiliadosRoute,
+  ContatoRoute: ContatoRoute,
+  CookiesRoute: CookiesRoute,
+  PrivacidadeRoute: PrivacidadeRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SobreRoute: SobreRoute,
+  TermosRoute: TermosRoute,
   ArtigosSlugRoute: ArtigosSlugRoute,
   CategoriasSlugRoute: CategoriasSlugRoute,
   ProdutosSlugRoute: ProdutosSlugRoute,
