@@ -53,7 +53,7 @@ export interface Category {
 export interface ArticleItem {
   productId: string;
   /** Ex.: "Melhor custo-benefício" */
-  highlight?: string;
+  highlight?: string | undefined;
   analysis: string[];
 }
 

@@ -24,16 +24,16 @@ export const articles: Article[] = [
     cover: { src: cover, alt: "Mountain bike encostada em um muro de pedra ao entardecer", width: 1600, height: 912 },
     items: ids.map((productId, i) => ({
       productId,
-      highlight: ["Melhor equilíbrio geral", "Melhor para a cidade", "Mais em conta", "Melhor para asfalto", "Melhor para espaços pequenos", "Melhor para evoluir", "Mais simples de manter", "Mais ágil", "Para adolescentes", "Mais versátil"][i],
+      highlight: ["Melhor equilíbrio geral", "Melhor para a cidade", "Mais em conta", "Melhor para asfalto", "Melhor para espaços pequenos", "Melhor para evoluir", "Mais simples de manter", "Mais ágil", "Para adolescentes", "Mais versátil"][i]!,
       analysis: [
         "Análise de exemplo: descreva aqui, com base em dados do fabricante e em fontes verificáveis, por que este modelo entrou na lista e em quais situações ele faz sentido.",
       ],
     })),
     picks: [
-      { label: "Equilíbrio geral", productId: ids[0] },
-      { label: "Uso urbano diário", productId: ids[1] },
-      { label: "Menor orçamento", productId: ids[2] },
-      { label: "Asfalto e terra", productId: ids[9] },
+      { label: "Equilíbrio geral", productId: ids[0]! },
+      { label: "Uso urbano diário", productId: ids[1]! },
+      { label: "Menor orçamento", productId: ids[2]! },
+      { label: "Asfalto e terra", productId: ids[9]! },
     ],
     criteria: [
       "Faixa de preço declarada pelo editor no momento da pesquisa.",

@@ -4,7 +4,7 @@ import { paginate, publishedArticles } from "@/lib/content";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/artigos/")({
-  validateSearch: (s: Record<string, unknown>) => ({ pagina: Number(s.pagina) > 1 ? Number(s.pagina) : undefined }),
+  validateSearch: (s: Record<string, unknown>): { pagina?: number } => (Number(s["pagina"]) > 1 ? { pagina: Number(s["pagina"]) } : {}),
   head: () => pageHead({ title: "Todos os comparativos e guias", description: "Lista completa de comparativos de produtos e guias de compra publicados.", path: "/artigos" }),
   component: ArticlesPage,
 });

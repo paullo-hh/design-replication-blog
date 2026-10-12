@@ -5,7 +5,7 @@ import { articlesInCategory, getCategory, paginate } from "@/lib/content";
 import { breadcrumbLd, pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/categorias/$slug")({
-  validateSearch: (s: Record<string, unknown>) => ({ pagina: Number(s.pagina) > 1 ? Number(s.pagina) : undefined }),
+  validateSearch: (s: Record<string, unknown>): { pagina?: number } => (Number(s["pagina"]) > 1 ? { pagina: Number(s["pagina"]) } : {}),
   loader: ({ params }) => {
     const category = getCategory(params.slug);
     if (!category) throw notFound();
