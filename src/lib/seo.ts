@@ -7,7 +7,7 @@ export function pageHead(opts: {
   description: string;
   path: string;
   type?: "website" | "article";
-  canonical?: string;
+  canonical?: string | undefined;
   jsonLd?: object[];
 }) {
   const title = opts.title.includes(siteConfig.name) ? opts.title : `${opts.title} | ${siteConfig.name}`;

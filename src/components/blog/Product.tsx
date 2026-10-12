@@ -84,7 +84,7 @@ export function ProsCons({ product }: { product: Product }) {
   );
 }
 
-export function ProductCard({ product, rank, highlight, analysis }: { product: Product; rank?: number; highlight?: string; analysis?: string[] }) {
+export function ProductCard({ product, rank, highlight, analysis }: { product: Product; rank?: number; highlight?: string | undefined; analysis?: string[] }) {
   return (
     <article id={`produto-${rank ?? product.slug}`} className="overflow-hidden rounded-xl border border-border bg-card">
       <div className="grid md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">

@@ -69,5 +69,5 @@ export const products: Product[] = seeds.map((s) => {
 
 // Alternativas: vizinhos na lista (apenas para demonstração)
 products.forEach((p, i) => {
-  p.alternatives = [products[(i + 1) % products.length].id, products[(i + 2) % products.length].id];
+  p.alternatives = [products[(i + 1) % products.length]!.id, products[(i + 2) % products.length]!.id];
 });
