@@ -145,16 +145,31 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.01em; }
-  :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
-  html { scroll-behavior: smooth; }
-  [id] { scroll-margin-top: 5rem; }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  [id] {
+    scroll-margin-top: 5rem;
+  }
 }
 
 @utility prose-editorial {
   font-size: 1.0625rem;
   line-height: 1.75;
-  & p + p { margin-top: 1rem; }
+  & p + p {
+    margin-top: 1rem;
+  }
 }
 @utility container-page {
   margin-inline: auto;

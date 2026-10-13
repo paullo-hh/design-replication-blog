@@ -4,8 +4,14 @@ import { paginate, publishedArticles } from "@/lib/content";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/artigos/")({
-  validateSearch: (s: Record<string, unknown>): { pagina?: number } => (Number(s["pagina"]) > 1 ? { pagina: Number(s["pagina"]) } : {}),
-  head: () => pageHead({ title: "Todos os comparativos e guias", description: "Lista completa de comparativos de produtos e guias de compra publicados.", path: "/artigos" }),
+  validateSearch: (s: Record<string, unknown>): { pagina?: number } =>
+    Number(s["pagina"]) > 1 ? { pagina: Number(s["pagina"]) } : {},
+  head: () =>
+    pageHead({
+      title: "Todos os comparativos e guias",
+      description: "Lista completa de comparativos de produtos e guias de compra publicados.",
+      path: "/artigos",
+    }),
   component: ArticlesPage,
 });
 
@@ -16,7 +22,11 @@ function ArticlesPage() {
     <div className="container-page py-14">
       <h1 className="text-4xl font-semibold md:text-5xl">Comparativos e guias</h1>
       {items.length ? (
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{items.map((a) => <ArticleCard key={a.id} article={a} />)}</div>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((a) => (
+            <ArticleCard key={a.id} article={a} />
+          ))}
+        </div>
       ) : (
         <p className="mt-8 text-muted-foreground">Nenhum artigo publicado ainda.</p>
       )}

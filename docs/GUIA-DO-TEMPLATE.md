@@ -2,20 +2,21 @@
 
 ## Onde editar cada coisa
 
-| O quê | Arquivo |
-|---|---|
-| Nome, slogan, cores, menu, contato, avisos de afiliado, rótulos dos botões | `src/content/site.config.ts` |
-| Categorias | `src/content/categories.ts` |
-| Produtos (descrição, especificações, prós/contras, preço verificado) | `src/content/products.ts` |
-| Links de afiliados (por produto e marketplace) | `src/content/affiliate-links.ts` |
-| Artigos (comparativos e guias) | `src/content/articles.ts` |
-| Sobre, privacidade, cookies, termos, aviso de afiliados | `src/content/institutional.tsx` |
-| Imagens | `src/assets/` (importe no arquivo de conteúdo) |
-| Favicon | `public/` + campo `favicon` no config |
+| O quê                                                                      | Arquivo                                        |
+| -------------------------------------------------------------------------- | ---------------------------------------------- |
+| Nome, slogan, cores, menu, contato, avisos de afiliado, rótulos dos botões | `src/content/site.config.ts`                   |
+| Categorias                                                                 | `src/content/categories.ts`                    |
+| Produtos (descrição, especificações, prós/contras, preço verificado)       | `src/content/products.ts`                      |
+| Links de afiliados (por produto e marketplace)                             | `src/content/affiliate-links.ts`               |
+| Artigos (comparativos e guias)                                             | `src/content/articles.ts`                      |
+| Sobre, privacidade, cookies, termos, aviso de afiliados                    | `src/content/institutional.tsx`                |
+| Imagens                                                                    | `src/assets/` (importe no arquivo de conteúdo) |
+| Favicon                                                                    | `public/` + campo `favicon` no config          |
 
 ## Como cadastrar um artigo com 10 produtos
 
 1. **Produtos** — em `products.ts`, adicione 10 objetos `Product`:
+
 ```ts
 {
   id: "furadeira-x200", slug: "furadeira-x200", name: "Furadeira X200", brand: "Marca",
@@ -28,7 +29,9 @@
   status: "publicado",
 }
 ```
+
 2. **Links** — em `affiliate-links.ts`:
+
 ```ts
 "furadeira-x200": [
   { marketplace: "mercadolivre", url: "https://mercadolivre.com/sec/SEU_LINK" },
@@ -36,9 +39,8 @@
   { marketplace: "shopee", url: "https://s.shopee.com.br/SEU_LINK" },
 ],
 ```
-   URLs vazias ou que não começam com `https://` não geram botão.
-3. **Artigo** — em `articles.ts`, adicione um `Article` com `items: [{ productId: "furadeira-x200", highlight: "Melhor custo-benefício", analysis: ["…"] }, …]`. A ordem do array é o ranking. `comparisonSpecs` define as colunas da tabela (use os mesmos `label` das specs).
-4. Use `status: "rascunho"` para esconder algo do site.
+
+URLs vazias ou que não começam com `https://` não geram botão. 3. **Artigo** — em `articles.ts`, adicione um `Article` com `items: [{ productId: "furadeira-x200", highlight: "Melhor custo-benefício", analysis: ["…"] }, …]`. A ordem do array é o ranking. `comparisonSpecs` define as colunas da tabela (use os mesmos `label` das specs). 4. Use `status: "rascunho"` para esconder algo do site.
 
 ## Regras editoriais
 

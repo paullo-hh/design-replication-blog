@@ -4,7 +4,8 @@ export const categories: Category[] = [
   {
     slug: "bicicletas",
     name: "Bicicletas",
-    description: "Comparativos e guias para escolher bicicletas urbanas, de trilha e para iniciantes.",
+    description:
+      "Comparativos e guias para escolher bicicletas urbanas, de trilha e para iniciantes.",
   },
   {
     slug: "acessorios-ciclismo",
